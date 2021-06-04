@@ -38,10 +38,12 @@
                 <h1 class="fw-light">Extract Colors From Images</h1>
                 <br>
                 <p class="lead text-muted">
-                    Upload the image and it will show you the most frequent colors with their hex values
+                   Upload the image and it'll extract all the colors from image and display them with their hex values
                 </p>
-                <p class="lead text-muted">
-                    NOTE: <strong><em><u>Currently only .jpg & .jpeg formats are supported</u></em></strong>
+                <p class="lead text-muted mt-3">
+                    <div class="alert alert-warning mt-5 " role="alert">
+                    NOTE: <strong><em><u>Currently only .jpg & .jpeg formats are supported also keep resoltion upto 800*1000 for best response.</u></em></strong>
+            </div>
                 </p>
                 <form action="{{ url_for('home') }}" method="POST" enctype="multipart/form-data" id="myform">
                     <p><input type="file" accept="image/jpg, image/jpeg" name="file" id="file"
