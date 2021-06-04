@@ -23,7 +23,7 @@ def home():
 
         colors = []
         for row in range(rows):
-            for column in range(columns):
+            for column in range(columns//3):
                 r = img_array[row, column, :][0]
                 g = img_array[row, column, :][1]
                 b = img_array[row, column, :][2]
@@ -47,8 +47,8 @@ def home():
             num = 5
 
         top_10_colors = [c for c in color_freq.keys()][::num]
-        top_10_colors = top_10_colors[
-                        :: (len(top_10_colors) // 10) if (len(top_10_colors) // 10) else (len(top_10_colors))]
+#         top_10_colors = top_10_colors[
+#                         :: (len(top_10_colors) // 10) if (len(top_10_colors) // 10) else (len(top_10_colors))]
         return render_template('display1.html', colors=top_10_colors, total_colors=len(color_freq))
     return render_template('display1.html')
 
