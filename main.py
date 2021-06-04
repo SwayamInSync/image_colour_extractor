@@ -2,15 +2,19 @@ from PIL import Image
 import numpy as np
 from colormap import rgb2hex
 from collections import Counter
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "thisisoursecret"
 
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         file = request.files['file']
+        if not file:
+            flash("Please select image first")
+            return render_template('display1.html')
         img = Image.open(file)
         img_array = np.array(img)
         rows, columns, colours = img_array.shape
