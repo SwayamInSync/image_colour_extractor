@@ -19,7 +19,7 @@ def home():
 
         colors = []
         for row in range(rows):
-            for column in range(columns//10):
+            for column in range(columns//3):
                 r = img_array[row, column, :][0]
                 g = img_array[row, column, :][1]
                 b = img_array[row, column, :][2]
