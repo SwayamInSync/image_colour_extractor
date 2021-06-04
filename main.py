@@ -21,7 +21,7 @@ def home():
         vector_len = rows * columns * colours
         pixels = vector_len / 3
 
-        if pixels > 800*1000:
+        if pixels > 1000*1000:
             flash('Keep maximum resolution for image upto 800*1000 for better response')
             return render_template('display1.html')
 
