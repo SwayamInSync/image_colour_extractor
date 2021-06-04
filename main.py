@@ -18,8 +18,8 @@ def home():
         pixels = vector_len / 3
 
         colors = []
-        for row in range(rows//100):
-            for column in range(columns//100):
+        for row in range(rows//10):
+            for column in range(columns//10):
                 r = img_array[row, column, :][0]
                 g = img_array[row, column, :][1]
                 b = img_array[row, column, :][2]
